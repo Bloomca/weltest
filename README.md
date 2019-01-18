@@ -14,12 +14,12 @@ const { shallow } = require('weltest');
 const html = htm.bind(createElement);
 
 test('<MyComponent /> renders three <Foo /> components', () => {
-  const wrapper = shallow(html`<MyComponent />`);
+  const wrapper = shallow(html`<${MyComponent} />`);
   expect(wrapper.find(Foo)).to.have.lengthOf(3);
 });
 
 it('<MyComponent /> renders an `.icon-star`', () => {
-  const wrapper = shallow(html`<MyComponent />`);
+  const wrapper = shallow(html`<${MyComponent} />`);
   expect(wrapper.find('.icon-star')).to.have.lengthOf(1);
 });
 ```
