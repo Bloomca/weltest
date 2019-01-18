@@ -41,6 +41,20 @@ test("shallow find should find a DOM node", async () => {
   expect(wrapper.find("[title=some]")[0].getAttribute("title")).toBe("some");
 });
 
+test("shallow does not render more than one level", async () => {
+  const El1 = function Component1() {
+    return h("div", null, "some", h(El2));
+  };
+
+  const El2 = function Component2() {
+    return h("div", null, "some2");
+  };
+
+  const wrapper = await shallow(h("div", null, h(El1), " ", h(El1)));
+
+  expect(wrapper.find(El2)).toHaveLength(0);
+});
+
 test("mounted wrapper should have `findComponent` method", async () => {
   const El1 = function Component1() {
     return h("div", null, "some");
