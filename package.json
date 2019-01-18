@@ -1,0 +1,23 @@
+{
+  "name": "weltest",
+  "version": "0.0.1",
+  "description": "Testing library for welgo library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bloomca/weltest.git"
+  },
+  "keywords": [
+    "welgo",
+    "testing"
+  ],
+  "author": "Seva Zaikov <seva.zaikov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bloomca/weltest/issues"
+  },
+  "homepage": "https://github.com/Bloomca/weltest#readme"
+}
