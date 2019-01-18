@@ -16,13 +16,19 @@ module.exports.mount = async function mount(tree, resolver) {
 
 function createWrapper(structure) {
   return {
-    findComponent: Component => findComponent(structure, Component),
     find: selector => {
-      const str = renderer(structure);
+      if (typeof selector === "string") {
+        const str = renderer(structure);
 
-      const dom = new JSDOM(str);
-      const a = dom.window.document.querySelectorAll(selector);
-      return a;
+        const dom = new JSDOM(str);
+        return dom.window.document.querySelectorAll(selector);
+      }
+
+      if (typeof selector === "function") {
+        return findComponent(structure, selector);
+      }
+
+      throw new Error("Only strings and functions are supported");
     }
   };
 }
