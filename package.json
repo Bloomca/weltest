@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/Bloomca/weltest/issues"
   },
-  "homepage": "https://github.com/Bloomca/weltest#readme"
+  "homepage": "https://github.com/Bloomca/weltest#readme",
+  "dependencies": {
+    "welgo": "^0.4.0-beta-1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }
