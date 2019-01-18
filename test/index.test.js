@@ -1,4 +1,4 @@
-const shallow = require("../src/shallow");
+const { shallow } = require("../src");
 const Welgo = require("welgo");
 const h = Welgo.createElement;
 
@@ -29,4 +29,14 @@ test("findComponent should find a correct number of instances", async () => {
 
   expect(wrapper.findComponent(El1)).toHaveLength(2);
   expect(wrapper.findComponent(El2)).toHaveLength(1);
+});
+
+test("find should find a DOM node", async () => {
+  const El1 = function Component() {
+    return h("div", { title: "some" }, "text");
+  };
+
+  const wrapper = await shallow(h(El1));
+
+  expect(wrapper.find("[title=some]")[0].getAttribute("title")).toBe("some");
 });
