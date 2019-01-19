@@ -1,5 +1,7 @@
 ## Weltest
 
+[![Build Status](https://travis-ci.org/Bloomca/weltest.svg?branch=master)](https://travis-ci.org/Bloomca/weltest)
+
 Library to test [welgo library](https://github.com/Bloomca/welgo) code.
 
 ## API
