@@ -93,3 +93,17 @@ test("mounted find should find a DOM node", async () => {
 
   expect(wrapper.find("[title=some]")[0].getAttribute("title")).toBe("some");
 });
+
+test("mount should work with several nested components", async () => {
+  const El1 = function Component1() {
+    return h("div", null, "some");
+  };
+
+  const El2 = function Component2() {
+    return h("div", null, h(El1));
+  };
+
+  const wrapper = await mount(h("div", null, h(El2)));
+
+  expect(wrapper.find(El1)).toHaveLength(1);
+});

@@ -50,6 +50,10 @@ function findComponent(tree, Component) {
       if (typeof tree === "object" && tree.children) {
         traverse(tree.children);
       }
+
+      if (typeof tree === "object" && tree.component) {
+        traverse(tree.tree);
+      }
     }
   }
 
