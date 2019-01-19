@@ -1,6 +1,6 @@
 {
   "name": "weltest",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Testing library for welgo library",
   "main": "src/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "homepage": "https://github.com/Bloomca/weltest#readme",
   "dependencies": {
     "jsdom": "^13.1.0",
-    "welgo": "^0.4.0-beta-2"
+    "welgo": "^0.5.1"
   },
   "devDependencies": {
     "jest": "^23.6.0"
